@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: 테스트용
 date: 2025-02-05 00:00:00 +0900
 categories: [도감]
