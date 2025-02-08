@@ -89,3 +89,6 @@ categories:
   post_measure:
     singular: post
     plural: posts
+  page_measure:
+    singular: doc
+    plural: docs
