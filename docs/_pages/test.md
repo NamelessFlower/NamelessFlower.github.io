@@ -4,6 +4,7 @@ title: 테스트용
 date: 2025-02-05 00:00:00 +0900
 categories: [도감]
 tags: [extag]     # TAG names should always be lowercase
+permalink: /test/
 ---
 
 **벤티** : 널 기다리면서 시를 몇 편이나 썼다고  
