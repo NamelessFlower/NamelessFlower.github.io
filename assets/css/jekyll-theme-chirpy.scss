@@ -9,6 +9,9 @@
 
 /* append your custom style below */
 
-%table-cell {
-  white-space: normal;
+
+.table-wrapper>table tbody tr td {
+    padding: .4rem 1rem;
+    font-size: 95%;
+    white-space: normal
 }
