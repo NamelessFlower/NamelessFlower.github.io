@@ -2,8 +2,8 @@
 layout: post
 title: 테스트용
 date: 2025-02-05 00:00:00 +0900
-categories: [도감]
-tags: [extag]     # TAG names should always be lowercase
+categories: [test, test]
+tags: [exampletag]     # TAG names should always be lowercase
 permalink: /test/
 ---
 
