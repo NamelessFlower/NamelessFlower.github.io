@@ -10,11 +10,11 @@ layout: page
 
 {% assign group_index = 0 %}
 
-{% assign sort_categories = site.categories | sort %}
+{% assign sort_categories = site.categories | sort site.categories[-1] %}
 
 {% for category in sort_categories %}
   {% assign category_name = category | first %}
-  {% assign posts_of_category = category | last %}
+  {% assign posts_of_category = category[-2] %}
   {% assign first_post = posts_of_category | first %}
 
   {% if category_name == first_post.categories[0] %}
