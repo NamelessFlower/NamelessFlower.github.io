@@ -163,6 +163,20 @@ script_includes:
         {% endif %}
       </div> -->
 
+      <div>
+        {{ page.url }}
+        {% assign paths = page.url | split: '/' %}
+        {{ paths | join: ", " }}
+
+        {% for item in paths %}
+          {{ item }}
+        {% endfor %}
+        
+        {{ paths[0] }}
+        {{ paths[1] }}
+        {{ paths[-1] }}
+      </div>
+
     </div>
     <!-- .post-tail-bottom -->
   </div>
