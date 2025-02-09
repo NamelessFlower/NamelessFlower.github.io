@@ -70,7 +70,6 @@ layout: page
     </span>
 
     <!-- arrow -->
-    {% if sub_categories_size > 0 %}
       <a
         href="#{{ LIST_PREFIX }}{{ group_index }}"
         data-bs-toggle="collapse"
@@ -80,44 +79,25 @@ layout: page
       >
         <i class="fas fa-fw fa-angle-down"></i>
       </a>
-    {% else %}
-      <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-        <i class="fas fa-fw fa-angle-right"></i>
-      </span>
-    {% endif %}
 
     <!-- Sub-categories -->
-    {% if sub_categories_size > 0 %}
+
       <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse show" aria-expanded="true">
         <ul class="list-group">
-          <!-- {% for sub_category in sub_categories %} -->
+
             <li class="list-group-item">
               <i class="far fa-folder fa-fw"></i>
-
-              {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
               <a href="/categories/법구/" class="mx-2">법구</a>
-
-              {% assign posts_size = site.categories[sub_category] | size %}
-              <span class="text-muted small font-weight-light">
-                {{ posts_size }}
-
-                {% if posts_size > 1 %}
-                  {{
-                    site.data.locales[lang].categories.post_measure.plural
-                    | default: site.data.locales[lang].categories.post_measure
-                  }}
-                {% else %}
-                  {{
-                    site.data.locales[lang].categories.post_measure.singular
-                    | default: site.data.locales[lang].categories.post_measure
-                  }}
-                {% endif %}
-              </span>
             </li>
-          <!-- {% endfor %} -->
+
+            <li class="list-group-item">
+              <i class="far fa-folder fa-fw"></i>
+              <a href="/categories/활/" class="mx-2">활</a>
+            </li>
+
         </ul>
       </div>
-    {% endif %}
+
   </div>
   <!-- .card-header -->
 
