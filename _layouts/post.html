@@ -164,17 +164,20 @@ script_includes:
       </div> -->
 
       <div>
-        {{ page.url }}
+        {{ page.url }}<br>
+        &nbsp; <br>
         {% assign paths = page.url | split: '/' %}
-        {{ paths | join: ", " }}
-
+        {{ paths | join: ", " }}<br>
+        &nbsp; <br>
         {% for item in paths %}
-          {{ item }}
+          {{ item }} <br>
         {% endfor %}
-        
-        {{ paths[0] }}
-        {{ paths[1] }}
-        {{ paths[-1] }}
+        &nbsp; <br>
+        {{ paths[0] }}<br>
+        {{ paths[1] }}<br>
+        {{ paths[-1] }}<br>
+        &nbsp; <br>
+        {{ paths.size }}
       </div>
 
     </div>
