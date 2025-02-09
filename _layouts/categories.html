@@ -14,7 +14,7 @@ layout: page
     <div class="card categories">
       <!-- top-category -->
       <div
-        id="h_0"
+        id="{{ HEAD_PREFIX }}{{ group_index }}"
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
@@ -23,48 +23,17 @@ layout: page
           <a href="/categories/캐릭터/" class="mx-2">캐릭터</a>
 
           <!-- content count -->
-          {% assign top_posts_size = site.categories[캐릭터] | size %}
           {% assign sub_categories_size = 0 %}
-          <span class="text-muted small font-weight-light">
-            {% if sub_categories_size > 0 %}
-              {{ sub_categories_size }}
-              {% if sub_categories_size > 1 %}
-                {{
-                  site.data.locales[lang].categories.category_measure.plural
-                  | default: site.data.locales[lang].categories.category_measure
-                }}
-              {% else %}
-                {{
-                  site.data.locales[lang].categories.category_measure.singular
-                  | default: site.data.locales[lang].categories.category_measure
-                }}
-              {% endif -%}
-              ,
-            {% endif %}
-
-            {{ top_posts_size }}
-
-            {% if top_posts_size > 1 %}
-              {{
-                site.data.locales[lang].categories.post_measure.plural
-                | default: site.data.locales[lang].categories.post_measure
-              }}
-            {% else %}
-              {{
-                site.data.locales[lang].categories.post_measure.singular
-                | default: site.data.locales[lang].categories.post_measure
-              }}
-            {% endif %}
-          </span>
+          
         </span>
 
         <!-- arrow -->
         {% if sub_categories_size > 0 %}
           <a
-            href="#l_0"
+            href="#{{ LIST_PREFIX }}{{ group_index }}"
             data-bs-toggle="collapse"
             aria-expanded="true"
-            aria-label="l_0-trigger"
+            aria-label="{{ HEAD_PREFIX }}{{ group_index }}-trigger"
             class="category-trigger hide-border-bottom"
           >
             <i class="fas fa-fw fa-angle-down"></i>
