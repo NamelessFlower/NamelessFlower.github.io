@@ -31,7 +31,7 @@
           {% else %}
             <span>
               <a href="{{ item | append: '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
+                {{ item }}
               </a>
             </span>
           {% endif %}
