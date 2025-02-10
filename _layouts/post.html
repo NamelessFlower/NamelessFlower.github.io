@@ -163,31 +163,6 @@ script_includes:
         {% endif %}
       </div> -->
 
-      <div>
-        {{ page.url }}<br>
-        &nbsp; <br>
-        {% assign paths = page.url | split: '/' %}
-        {{ paths | join: ", " }}<br>
-        &nbsp; <br>
-        {% for item in paths %}
-          {{ item }} <br>
-        {% endfor %}
-        &nbsp; <br>
-        {{ paths[0] }}<br>
-        {{ paths[1] }}<br>
-        {{ paths[-1] }}<br>
-        &nbsp; <br>
-        {{ paths.size }}<br>
-        <span>"/{{paths[1]}}/{{paths[-1]}}/"</span><br>
-        &nbsp;<br>
-        <a href="/캐릭터/벤티/">
-          테스트
-        </a><br>
-<!--         <a href="/{{paths[1]}}/{{paths[-1]}}/">
-          테스트2
-        </a> -->
-      </div>
-
     </div>
     <!-- .post-tail-bottom -->
   </div>
