@@ -13,29 +13,56 @@
         <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
 
       {% else %}
-        {% for item in paths %}
-          {% if forloop.first %}
-            <span>
-              <a href="{{ '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs.home | capitalize -}}
-              </a>
-            </span>
+      <span>
+        <a href="{{ '/' | relative_url }}">
+          {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+        </a>
+      </span>
+        <!-- Categories, Tags, Archieves -->
+        {% if paths.size == 2 %}
+          <span>
+            {{ page.title }}
+          </span>
 
-          {% elsif forloop.last %}
-            {% if page.collection == 'tabs' %}
-              <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
-            {% else %}
-              <span>{{ page.title }}</span>
-            {% endif %}
+        <!-- Category, Tag -->
+        {% elsif paths.size == 3 and path[1] == 'categories' or path[1] == 'tags' %}
+          <span>
+            <a href="/{{paths[1]}}/">
+              {{ paths[1] | capitalize }}
+            </a>
+          </span>
+          <span>
+            {{ page.title }}
+          </span>
 
-          {% elsif page.layout == 'category' or page.layout == 'tag' %}
-            <span>
-              <a href="{{ item | append: '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
-              </a>
-            </span>
-          {% endif %}
-        {% endfor %}
+        <!-- Post with one category -->
+        {% elsif paths.size == 3 %}
+          <span>
+            <a href="/categories/{{paths[1]}}/">
+              {{ paths[1] }}
+            </a>
+          </span>
+          <span>
+            {{ page.title }}
+          </span>
+
+        <!-- Post with two categories -->
+        {% elsif paths.size == 4 %}
+          <span>
+            <a href="/categories/{{paths[1]}}/">
+              {{ paths[1] }}
+            </a>
+          </span>
+          <span>
+            <a href="/categories/{{paths[2]}}/">
+              {{ paths[2] }}
+            </a>
+          </span>
+          <span>
+            {{ page.title }}
+          </span>
+        {% endif %}
+        
       {% endif %}
     </nav>
     <!-- endof #breadcrumb -->
