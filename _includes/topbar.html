@@ -25,7 +25,7 @@
           </span>
 
         <!-- Category, Tag -->
-        {% elsif paths.size == 3 and path[1] == 'categories' or path[1] == 'tags' %}
+        {% elsif paths.size == 3 and paths[1] == 'categories' or paths[1] == 'tags' %}
           <span>
             <a href="/{{paths[1]}}/">
               {{ paths[1] | capitalize }}
