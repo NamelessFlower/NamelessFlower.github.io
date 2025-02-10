@@ -32,6 +32,9 @@ layout: default
         {{ paths[1] }}<br>
         {{ paths[-1] }}<br>
         &nbsp; <br>
-        {{ paths.size }}
+        {{ paths.size }}<br>
+        {% if paths[1] == 'categories' %}
+         <span>확인</span>
+        {% endif %}
       </div>
 </article>
