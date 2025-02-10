@@ -45,9 +45,7 @@ layout: page
       </span>
     {% endif %}
   </div>
-  <!-- .card-header -->
-
-  
+  <!-- .card-header --> 
 </div>
 <!-- .card -->
 
@@ -70,6 +68,7 @@ layout: page
     </span>
 
     <!-- arrow -->
+    {% if sub_categories_size > 0 %}
       <a
         href="#{{ LIST_PREFIX }}{{ group_index }}"
         data-bs-toggle="collapse"
@@ -79,6 +78,11 @@ layout: page
       >
         <i class="fas fa-fw fa-angle-down"></i>
       </a>
+    {% else %}
+      <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
+        <i class="fas fa-fw fa-angle-right"></i>
+      </span>
+    {% endif %}
   </div>
     <!-- .card-header -->
 
@@ -99,10 +103,5 @@ layout: page
 
         </ul>
       </div>
-
- 
-  
-
-  
 </div>
 <!-- .card -->
