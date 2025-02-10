@@ -12,6 +12,7 @@ layout: page
 
 <!-- 캐릭터 -->
 {% assign group_index = 0 %}
+{% assign sub_categories_size = 0 %}
 <div class="card categories">
   <!-- top-category -->
   <div
@@ -21,10 +22,7 @@ layout: page
     <span class="ms-2">
       <i class="far fa-folder fa-fw"></i>
 
-      <a href="/categories/캐릭터/" class="mx-2">캐릭터</a>
-
-      <!-- content count -->
-      {% assign sub_categories_size = 0 %}
+      <a href="/categories/캐릭터/" class="mx-2">캐릭터</a>      
       
     </span>
 
@@ -51,6 +49,7 @@ layout: page
 
 <!-- 무기 -->
 {% assign group_index = group_index | plus: 1 %}
+{% assign sub_categories_size = 2 %}
 <div class="card categories">
   <!-- top-category -->
   <div
@@ -58,13 +57,10 @@ layout: page
     class="card-header d-flex justify-content-between hide-border-bottom"
   >
     <span class="ms-2">
-      <i class="far fa-folder fa-fw"></i>
+      <i class="far fa-folder{% if sub_categories_size > 0 %}-open{% endif %} fa-fw"></i>
 
       <a href="/categories/무기/" class="mx-2">무기</a>
 
-      <!-- content count -->
-      {% assign sub_categories_size = 2 %}
-      
     </span>
 
     <!-- arrow -->
