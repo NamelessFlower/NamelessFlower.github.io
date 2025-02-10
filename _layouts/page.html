@@ -17,24 +17,4 @@ layout: default
   {% else %}
     {{ content }}
   {% endif %}
-
-      <div>
-        {{ page.url }}<br>
-        &nbsp; <br>
-        {% assign paths = page.url | split: '/' %}
-        {{ paths | join: ", " }}<br>
-        &nbsp; <br>
-        {% for item in paths %}
-          {{ item }} <br>
-        {% endfor %}
-        &nbsp; <br>
-        {{ paths[0] }}<br>
-        {{ paths[1] }}<br>
-        {{ paths[-1] }}<br>
-        &nbsp; <br>
-        {{ paths.size }}<br>
-        {% if paths[1] == 'categories' %}
-         <span>확인</span>
-        {% endif %}
-      </div>
 </article>
