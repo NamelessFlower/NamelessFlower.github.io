@@ -177,7 +177,8 @@ script_includes:
         {{ paths[1] }}<br>
         {{ paths[-1] }}<br>
         &nbsp; <br>
-        {{ paths.size }}
+        {{ paths.size }}<br>
+        {{"/{{paths[1]}}/{{paths[-1]}}/"| relative_url}}
       </div>
 
     </div>
