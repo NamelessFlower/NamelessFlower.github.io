@@ -39,7 +39,7 @@
         {% elsif paths.size == 3 %}
           <span>
             <a href="/categories/{{paths[1]}}/">
-              {{ paths[1] }}
+              {{ paths[1] | url_decode }}
             </a>
           </span>
           <span>
@@ -50,12 +50,12 @@
         {% elsif paths.size == 4 %}
           <span>
             <a href="/categories/{{paths[1]}}/">
-              {{ paths[1] }}
+              {{ paths[1] | url_decode }}
             </a>
           </span>
           <span>
             <a href="/categories/{{paths[2]}}/">
-              {{ paths[2] }}
+              {{ paths[2] | url_decode }}
             </a>
           </span>
           <span>
